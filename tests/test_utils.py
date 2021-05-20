@@ -25,7 +25,7 @@ def test_padArrays():
         np.array([1, 1, 1, 1, 1]),
         np.array([1, 1, 1]),    
         np.array([1])], dtype=object)
-    padded = padArrays(unpadded)
+    padded = padArrays(unpadded, value=-1)
     testArr = np.array([[1, 1, 1, 1, 1], [1, 1, 1, -1, -1], [1, -1, -1, -1, -1]])
     assert(np.array_equal(padded, testArr))
 

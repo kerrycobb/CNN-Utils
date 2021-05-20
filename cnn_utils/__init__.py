@@ -46,25 +46,25 @@ def sortMatrices(matrices):
         for j in matrices:
             j[i] = j[i][:, rank]
 
-def padMatrices(matrices):
+def padMatrices(matrices, value=0):
     """
     Pad array of matrices with zeros
     """
     maxLen = max([i.shape[0] for i in matrices]) 
-    paddedMatrixArray = np.zeros((matrices.shape[0], maxLen, 
-            matrices[0].shape[1]), dtype=np.int8)
+    paddedMatrixArray = np.full((matrices.shape[0], maxLen, 
+            matrices[0].shape[1]), value, dtype=np.int8)
     for i in range(matrices.shape[0]):
         for j in range(matrices[i].shape[0]):
             paddedMatrixArray[i][j] = matrices[i][j]
     return paddedMatrixArray
 
-def padArrays(arrays):
+def padArrays(arrays, value=0):
     """
     Pad array of arrays with zeros
     """
     maxLen = max([i.shape[0] for i in arrays]) 
     # paddedArrays = np.zeros((arrays.shape[0], maxLen), dtype=np.int8)
-    paddedArrays = np.full((arrays.shape[0], maxLen), -1)
+    paddedArrays = np.full((arrays.shape[0], maxLen), value)
     for i in range(arrays.shape[0]):
         paddedArrays[i][0:arrays[i].shape[0]] = arrays[i]
     return paddedArrays
