@@ -10,7 +10,7 @@ st.setup(
     author_email='cobbkerry@gmail.com',
     license='MIT',
     packages=st.find_packages(exclude=["tests*"]),
-    install_requires=[
-        'numpy',
-        'sklearn']
+#    install_requires=[
+#        'numpy',
+#        'sklearn']
 )
